@@ -3,13 +3,21 @@ import {SafeAreaView, StyleSheet, Text, View, TextInput, ScrollView} from 'react
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
+const [todos, setTodos] = useState([]);
+const addTodo = text => {
+  setTodos([
+    ...todos,
+    {id: Math.random().toString(), textValue: text, checked: false},
+  ]);
+};
+
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.appTitle}>Hello Todolist</Text>
       <View style={styles.card}>
-        <TodoInsert />
-        <TodoList />
+        <TodoInsert onAddTodo={addTodo} />
+        <TodoList todos={todos} />
       </View>
     </SafeAreaView>
   );
