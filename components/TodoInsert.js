@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, TextInput, View} from 'react-native';
 
-const TodoInsert = (onAddTodo) => {
+const TodoInsert = ({onAddTodo}) => {
     const [newTodoItem, setNewTodoItem] = useState('');
     const todoInputHandler = newTodo => {
         setNewTodoItem(newTodo);
@@ -29,11 +29,11 @@ const TodoInsert = (onAddTodo) => {
 };
 
 const styles = StyleSheet.create({
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
+    inputContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      },
   input: {
     flex: 1,
     padding: 20,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   button: {
-    marginRight: 10,
+    marginRight: 30,
   },
 });
 
